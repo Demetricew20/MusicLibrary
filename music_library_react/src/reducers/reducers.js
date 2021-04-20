@@ -4,7 +4,7 @@ import {
     UPDATE_SONG,
     DELETE_SONG,
     GET_SONG_BY_TITLE,
-} from "./actionTypes";
+} from "../actions/actionTypes";
 
 const initialState = [];
 

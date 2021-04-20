@@ -1,10 +1,4 @@
-import {
-    ADD_NEW_SONG,
-    RETRIEVE_SONGS,
-    UPDATE_SONG,
-    DELETE_SONG,
-    GET_SONG_BY_TITLE,
-} from "./actionTypes";
+import {ADD_NEW_SONG, RETRIEVE_SONGS,UPDATE_SONG, DELETE_SONG, GET_SONG_BY_TITLE} from "./actionTypes";
 import MusicLibraryService from "../services/musicLibraryServices";
 
 
@@ -18,8 +12,8 @@ export const newSong = (title, artist, album, genre, releaseDate) => async (disp
         });
 
         return Promise.resolve(response.data);
-    } catch (err) {
-        return Promise.reject(err);
+    } catch (error) {
+        return Promise.reject(error);
     }
 };
 
@@ -31,8 +25,8 @@ export const retrieveSongs = () => async (dispatch) => {
         type: RETRIEVE_SONGS,
         payload: response.data,
         });
-    } catch (err) {
-        console.log(err);
+    } catch (error) {
+        console.log(error);
     }
 };
 
@@ -46,8 +40,8 @@ export const update = (id, data) => async (dispatch) => {
         });
 
         return Promise.resolve(response.data);
-    } catch (err) {
-        return Promise.reject(err);
+    } catch (error) {
+        return Promise.reject(error);
     }
 };
 
@@ -59,8 +53,8 @@ export const remove = (id) => async (dispatch) => {
         type: DELETE_SONG,
         payload: { id },
         });
-    } catch (err) {
-        console.log(err);
+    } catch (error) {
+        console.log(error);
     }
 };
 
@@ -72,7 +66,7 @@ export const searchByTitle = (title) => async (dispatch) => {
         type: GET_SONG_BY_TITLE,
         payload: response.data,
         });
-    } catch (err) {
-        console.log(err);
+    } catch (error) {
+        console.log(error);
     }
 };

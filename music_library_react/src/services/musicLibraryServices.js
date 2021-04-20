@@ -1,4 +1,4 @@
-import http from "../http-common";
+import http from "../services/axios";
 
 const getAllSongs = () => {
     return http.get("/music");
