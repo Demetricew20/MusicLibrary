@@ -5,9 +5,6 @@ import AddSong from './components/AddSong';
 function App() {
 
 
-
-
-
   return (
     <div className="App">
       <h1>APP COMPONENT</h1>

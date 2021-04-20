@@ -4,12 +4,14 @@ import { newSong } from "../actions/actionCreators";
 
 const AddSong = () => {
     const initialState = {
+
         id: null,
         title: '',
         artist: '',
         album: '',
         genre: '',
         releaseDate: null,
+        
     };
     const [song, setSong] = useState(initialState);
     const [submitted, setSubmitted] = useState(false);
