@@ -1,0 +1,5 @@
+export const ADD_NEW_SONG = "ADD_NEW_SONG";
+export const RETRIEVE_SONGS = "RETRIEVE_SONGS";
+export const UPDATE_SONG = "UPDATE_TUTORIAL";
+export const DELETE_SONG = "DELETE_SONG";
+export const GET_SONG_BY_TITLE = "GET_SONG_BY_TITLE";
