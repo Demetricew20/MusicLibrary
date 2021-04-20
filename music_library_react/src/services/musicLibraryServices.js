@@ -1,27 +1,27 @@
-import axios from "../services/axios";
+import http from "../services/axios";
 
 const getAllSongs = () => {
-    return axios.get("/music");
+    return http.get("/music/");
 };
 
 const getSongById = id => {
-    return axios.get(`/music/${id}`);
+    return http.get(`/music/${id}`);
 };
 
 const addNewSong = data => {
-    return axios.post("/music", data);
+    return http.post("/music/", data);
 };
 
 const update = (id, data) => {
-    return axios.put(`/music/${id}`, data);
+    return http.put(`/music/${id}`, data);
 };
 
 const remove = id => {
-    return axios.delete(`/music/${id}`);
+    return http.delete(`/music/${id}`);
 };
 
 const getSongByTitle = title => {
-    return axios.get(`/music?title=${title}`);
+    return http.get(`/music?title=${title}`);
 };
 
 const MusicLibraryService = {

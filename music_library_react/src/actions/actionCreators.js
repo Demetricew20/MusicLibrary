@@ -13,6 +13,7 @@ export const newSong = (title, artist, album, genre, releaseDate) => async (disp
 
         return Promise.resolve(response.data);
     } catch (error) {
+        console.log(error.response.data)
         return Promise.reject(error);
     }
 };

@@ -10,8 +10,8 @@ const AddSong = () => {
         artist: '',
         album: '',
         genre: '',
-        releaseDate: null,
-        
+        releaseDate: '',
+
     };
     const [song, setSong] = useState(initialState);
     const [submitted, setSubmitted] = useState(false);
@@ -116,7 +116,7 @@ const AddSong = () => {
                 <div className="form-group">
                 <label htmlFor="releaseDate">Release Date</label>
                 <input
-                    type="text"
+                    type="date"
                     className="form-control"
                     id="releaseDate"
                     required
