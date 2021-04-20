@@ -1,6 +1,7 @@
 import './App.css';
 import './components/AddSong'
 import AddSong from './components/AddSong';
+import UpdateAndRemove from './components/UpdateAndRemove'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <h1>APP COMPONENT</h1>
       <div>
         <AddSong/>
+        <UpdateAndRemove/>
       </div>
     </div>
   );
