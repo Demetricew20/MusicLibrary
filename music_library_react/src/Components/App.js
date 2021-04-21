@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import SongTable from './SongTable';
 import Song from './Songs';
+import Header from './Header';
 
 class App extends Component {
   state = {
@@ -36,6 +37,7 @@ class App extends Component {
     return(
     <div>
       <Router>
+        <Header/>
         <Route path='/library'>
         <SongTable mapSongs={() => this.mapSongs()}/>
         </Route>
