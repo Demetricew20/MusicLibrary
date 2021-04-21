@@ -5,6 +5,7 @@ import axios from 'axios';
 import SongTable from './SongTable';
 import Song from './Songs';
 import Header from './Header';
+import AddSong from './AddSong';
 
 class App extends Component {
   state = {
@@ -14,14 +15,14 @@ class App extends Component {
   componentDidMount(){
     //gets called after the component did mount (rendered to the page)
     this.getAllSongs();
-  }
+  };
 
   async getAllSongs(){
     let response = await axios.get('http://127.0.0.1:8000');
     this.setState({
       songs: response.data
     })
-  }
+  };
 
   mapSongs(){
     return this.state.songs.map(song =>
@@ -30,7 +31,7 @@ class App extends Component {
         song={song}
       />
     )
-  }
+  };
 
   render(){
     console.log("this.state >>>", this.state);
@@ -41,9 +42,13 @@ class App extends Component {
         <Route path='/library'>
         <SongTable mapSongs={() => this.mapSongs()}/>
         </Route>
-      </Router>
-      <Route path='/'>
+        <Route path='/add_song'>
+          <AddSong/>
       </Route>
+        <Route path='/'>
+      </Route>
+      </Router>
+
     </div>
     );
   }
