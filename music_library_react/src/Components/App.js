@@ -1,20 +1,17 @@
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, {Component} from 'react';
-import axios from 'axios';
 import MusicLibraryServices from '../Services/requests'
 import SongTable from './SongTable';
 import Song from './Songs';
 import Header from './Header';
 import AddSong from './AddSong';
-import EditSong from './EditSong';
+import EditSong from './EditSong'
 
 class App extends Component {
   state = {
     songs: [],
-    currentSong: null,
-    currentIndex: -1,
-    searchByTitle: ''
+    currentSong: []
   }
 
   componentDidMount(){
@@ -42,13 +39,14 @@ class App extends Component {
 
     this.getAllSongs();
   }
-
+  
+  
   mapSongs(){
     return this.state.songs.map(song =>
       <Song 
         key={song.id}
         song={song}
-        active={() => this.activeSong()}
+        link={'/song/' + song.id}
         deleteSong={() => this.deleteSong(song.id)}
       />
     )
@@ -74,9 +72,7 @@ class App extends Component {
         <Route path='/add_song'>
           <AddSong/>
       </Route>
-        <Route path='/view_song'>
-          <EditSong/>
-      </Route>
+        <Route path="/song/:id" render={props => ( <EditSong {...props} />)} />
       </Router>
 
     </div>
