@@ -2,28 +2,28 @@ import http from './axios'
 
 class MusicLibraryServices {
     getAll() {
-        return http.get("/music/");
+        return http.get("/");
         }
 
         get(id) {
-        return http.get(`/music/${id}`);
+        return http.get(`/song/${id}`);
         }
 
         create(data) {
-        return http.post("/music", data);
+        return http.post("/", data);
         }
 
         update(id, data) {
-        return http.put(`/music/${id}`, data);
+        return http.put(`/song/${id}`, data);
         }
 
         delete(id) {
-        return http.delete(`/music/${id}`);
+        return http.delete(`/song/${id}`);
         }
 
         findByTitle(title) {
-        return http.get(`/music?title=${title}`);
+        return http.get(`/?title=${title}`);
         }
 }
 
-export default new MusicLibraryServices
+export default new MusicLibraryServices();

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, {Component} from 'react';
 import MusicLibraryServices from '../Services/requests'
 
@@ -21,10 +20,12 @@ export default class AddSong extends Component {
             artist: '',
             album: '',
             genre: '',
-            release_date: null,
+            release_date: '',
             submitted: false
         };
     }
+
+    //Detects changes 
 
     onChangeTitle(event) {
         this.setState({
@@ -76,7 +77,7 @@ export default class AddSong extends Component {
             console.log(response.data);
         })
         .catch(error => {
-            console.log(error);
+            console.log(error.response.data);
         });
     }
 
@@ -87,7 +88,7 @@ export default class AddSong extends Component {
             artist: '',
             album: '',
             genre: '',
-            release_date: null,
+            release_date: '',
             submitted: false
         })
     }
@@ -100,7 +101,7 @@ export default class AddSong extends Component {
                 <div>
                 <h4>You submitted successfully!</h4>
                 <button className="btn btn-success" onClick={this.newSong}>
-                    Add
+                    Add Song
                 </button>
                 </div>
             ) : (
@@ -139,7 +140,7 @@ export default class AddSong extends Component {
                     id="album"
                     required
                     value={this.state.album}
-                    onChange={this.onChangeArtist}
+                    onChange={this.onChangeAlbum}
                     name="album"
                     />
                 </div>

@@ -6,6 +6,7 @@ import SongTable from './SongTable';
 import Song from './Songs';
 import Header from './Header';
 import AddSong from './AddSong';
+import EditSong from './EditSong';
 
 class App extends Component {
   state = {
@@ -45,7 +46,8 @@ class App extends Component {
         <Route path='/add_song'>
           <AddSong/>
       </Route>
-        <Route path='/'>
+        <Route path='/view_song'>
+          <EditSong/>
       </Route>
       </Router>
 
