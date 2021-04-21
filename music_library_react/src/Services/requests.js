@@ -1,7 +1,7 @@
 import http from './axios'
 
 class MusicLibraryServices {
-    getAll() {
+        getAll() {
         return http.get("/");
         }
 
