@@ -51,9 +51,10 @@ const Song = (props) => {
                 <td>
                 {/* Hand Edit */}
                 <form action='/library'>
+                <Link to={props.link}>
                 <button onClick={() => editTrue()}>Edit</button>
+                </Link>
                 </form>
-                
                 </td>
                 <td><button onClick={props.deleteSong}>Delete</button></td>
             </tr>

@@ -46,7 +46,12 @@ class App extends Component {
       <Song 
         key={song.id}
         song={song}
-        link={'/song/' + song.id}
+        link={
+          {
+            pathname:  `/song/${song.id}`,
+            query: {song: song.id},
+          }
+        }
         deleteSong={() => this.deleteSong(song.id)}
       />
     )
@@ -72,6 +77,7 @@ class App extends Component {
         <Route path='/add_song'>
           <AddSong/>
       </Route>
+      <Route exact path='/song/:id' component={EditSong}/>
       </Router>
 
     </div>

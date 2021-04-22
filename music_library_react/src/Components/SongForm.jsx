@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import './SongForm.css';
+const  SongForm = (props) => {
 
-class SongForm extends Component {
-    constructor(props) {
-        super(props);
-        //Add onChange Values
-
-        this.state = {
-            submitted: false
-        }
-
+    const state = {
+        submitted: false
     }
 
-    render() {
-        return (
+    
+    return (
             <div className="submit-form">
-            {this.state.submitted ? (
+            {props.type === state.submitted ? (
                 <div>
                 <h4>Success!</h4>
                 <button className="btn btn-success" onClick={this.newSong}>
@@ -30,9 +24,10 @@ class SongForm extends Component {
                     type="text"
                     className="form-control"
                     id="title"
+                    placeholder={props.title}
                     required
-                    value={this.state.title}
-                    onChange={this.onChangeTitle}
+                    value={props.title}
+                    onChange={props.handleChangeTitle}
                     name="title"
                     />
                 </div>
@@ -43,9 +38,10 @@ class SongForm extends Component {
                     type="text"
                     className="form-control"
                     id="artist"
+                    placeholder={props.artist}
                     required
-                    value={this.state.artist}
-                    onChange={this.onChangeArtist}
+                    value={props.artist}
+                    onChange={props.handleChangeArtist}
                     name="artist"
                     />
                 </div>
@@ -56,9 +52,10 @@ class SongForm extends Component {
                     type="text"
                     className="form-control"
                     id="album"
+                    placeholder={props.album}
                     required
-                    value={this.state.album}
-                    onChange={this.onChangeAlbum}
+                    value={props.album}
+                    onChange={props.handleChangeAlbum}
                     name="album"
                     />
                 </div>
@@ -69,9 +66,10 @@ class SongForm extends Component {
                     type="text"
                     className="form-control"
                     id="genre"
+                    placeholder={props.genre}
                     required
-                    value={this.state.genre}
-                    onChange={this.onChangeGenre}
+                    value={props.genre}
+                    onChange={props.handleChangeGenre}
                     name="genre"
                     />
                 </div>
@@ -82,21 +80,22 @@ class SongForm extends Component {
                     type="date"
                     className="form-control"
                     id="release_date"
+                    placeholder={props.releaseDate}
                     required
-                    value={this.state.release_date}
-                    onChange={this.onChangeReleaseDate}
+                    value={props.releaseDate}
+                    onChange={props.handleChangeReleaseDate}
                     name="release_date"
                     />
                 </div>
 
-                <button onClick={this.saveSong} className="btn btn-success">
+                <button onClick={props.saveAction} className="btn btn-success">
                     Submit
-                    {this.submitted = true}
+                    {state.submitted = true}
                 </button>
                 </div>
             )}
             </div>
             );
-            };
-}
+};
+
 export default SongForm;
