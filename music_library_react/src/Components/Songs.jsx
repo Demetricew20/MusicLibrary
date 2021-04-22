@@ -1,4 +1,4 @@
-import Modal from "react-bootstrap/Modal";
+import ModalForm from './Modal.js';
 import React, { useState } from 'react';
 import EditSong from './EditSong.jsx';
 
@@ -25,18 +25,7 @@ const Song = (props) => {
                     <td >{props.song.genre}</td>
                     <td >{props.song.release_date}</td>
                     <td>
-                        <>
-                        <button onClick={showModal}>Edit</button>
-                        <Modal show={isOpen} onHide={hideModal}>
-                            <Modal.Header>
-                            <Modal.Title>Edit Song</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body><EditSong id={props.song.id}/></Modal.Body>
-                            <Modal.Footer>
-                            <button onClick={hideModal}>Cancel</button>
-                            </Modal.Footer>
-                        </Modal>
-                        </>
+                        <ModalForm action='Edit' title='Edit Song' content={<EditSong id={props.song.id}/>}/>
                     
                     </td>
                     <td><button onClick={props.deleteSong}>Delete</button></td>

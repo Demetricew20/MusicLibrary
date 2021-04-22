@@ -32,7 +32,7 @@ const SongTable = (props) => {
                 {props.mapSongs()}
             </table>
             <div>
-                <button onClick={}>Add New Song</button>
+                {/* <button onClick={}>Add New Song</button>
                 <Modal>
                     <Modal.Header>
                     <Modal.Title>Add Song</Modal.Title>
@@ -43,7 +43,7 @@ const SongTable = (props) => {
                     <Modal.Footer>
                         <button onClick={hideModal}>Cancel</button>
                     </Modal.Footer>
-                </Modal>
+                </Modal> */}
                 
             </div>
         </div>
