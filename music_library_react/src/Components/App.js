@@ -16,6 +16,7 @@ class App extends Component {
 
   componentDidMount(){
     //gets called after the component did mount (rendered to the page)
+    this.refreshTable();
     this.getAllSongs();
   };
 
@@ -60,8 +61,7 @@ class App extends Component {
   refreshTable() {
     this.getAllSongs();
     this.setState({
-      currentSong: null,
-      currentIndex: -1
+      song: []
     })
   }
 
