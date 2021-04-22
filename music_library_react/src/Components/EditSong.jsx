@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MusicLibraryServices from "../Services/requests";
+import { Link } from 'react-router-dom';
 
 export default class EditSong extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class EditSong extends Component {
         artist: '',
         album: '',
         genre: '',
-        releaseDate: '',
+        releaseDate: null,
         updated: false
       },
       message: ""
@@ -29,7 +30,8 @@ export default class EditSong extends Component {
   }
 
   componentDidMount() {
-    this.getSong(this.props.match.params.id);
+    console.log(this.props);
+    this.getSong(this.props.id);
   }
 
   onChangeTitle(e) {
@@ -90,6 +92,7 @@ export default class EditSong extends Component {
   }
 
   getSong(id) {
+    console.log(this.props);
     MusicLibraryServices.get(id)
       .then(response => {
         this.setState({
@@ -107,6 +110,9 @@ export default class EditSong extends Component {
       id: this.state.currentSong.id,
       title: this.state.currentSong.title,
       artist: this.state.currentSong.artist,
+      album: this.state.currentSong.album,
+      genre: this.state.currentSong.genre,
+      releaseDate: this.state.currentSong.releaseDate,
       updated: status
     };
 
@@ -135,17 +141,24 @@ export default class EditSong extends Component {
         this.setState({
           message: "The song was updated successfully!"
         });
+        
+        this.refreshLibrary();
+        
       })
       .catch(error => {
         console.log(error);
       });
   }
 
+  refreshLibrary = () => {
+    window.location.reload();
+  }
+
   deleteSong() {    
     MusicLibraryServices.delete(this.state.currentSong.id)
       .then(response => {
         console.log(response.data);
-        this.props.history.push('/')
+        this.refreshLibrary();
       })
       .catch(error => {
         console.log(error);
@@ -208,15 +221,14 @@ export default class EditSong extends Component {
                     className="badge badge-danger mr-2"
                     onClick={this.deleteSong}
                 >
-                    Delete
+                    <Link to='/library' />Delete
                 </button>
 
                 <button
                     type="submit"
                     className="badge badge-success"
                     onClick={this.updateSong}
-                >
-                    Update
+                > <Link to='/library'/> Update
                 </button>
                 <p>{this.state.message}</p>
                 </div>

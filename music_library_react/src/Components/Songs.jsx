@@ -1,67 +1,48 @@
+import Modal from "react-bootstrap/Modal";
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
-import MusicLibraryServices from '../Services/requests'
+import EditSong from './EditSong.jsx';
 
 const Song = (props) => {
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const showModal = () => {
+        setIsOpen(true);
+    }
     
-    let editing = false;
-
-    function editTrue() {
-        
-        editing = true;
-        return editing, console.log(editing);
+    const hideModal = () => {
+        setIsOpen(false);
     }
 
-    function editFalse() {
-        editing = false;
-        return editing, console.log(editing);
-    }
 
-    /// Fix errors --- Try using function for table with conditional boolean statements ^^^^^
-
-    if (editing) {
         return (
+            
             <tbody>
                 <tr className='table__row' id='table_row' name='table_row'>
-                    <td contentEditable='true'>{props.song.title}</td>
-                    <td contentEditable='true'>{props.song.artist}</td>
-                    <td contentEditable='true'>{props.song.album}</td>
-                    <td contentEditable='true'>{props.song.genre}</td>
-                    <td contentEditable='true'>{props.song.release_date}</td>
+                    <td >{props.song.title}</td>
+                    <td >{props.song.artist}</td>
+                    <td >{props.song.album}</td>
+                    <td >{props.song.genre}</td>
+                    <td >{props.song.release_date}</td>
                     <td>
-                    {/* Hand Save */}
-                    <button onClick={() => editFalse()}>Save</button>
+                        <>
+                        <button onClick={showModal}>Edit</button>
+                        <Modal show={isOpen} onHide={hideModal}>
+                            <Modal.Header>
+                            <Modal.Title>Edit Song</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body><EditSong id={props.song.id}/></Modal.Body>
+                            <Modal.Footer>
+                            <button onClick={hideModal}>Cancel</button>
+                            </Modal.Footer>
+                        </Modal>
+                        </>
+                    
                     </td>
                     <td><button onClick={props.deleteSong}>Delete</button></td>
                 </tr>
             </tbody>
         )
-
-        }
-    if (!editing) {
-        return (
-        <tbody>
-            <tr className='table__row' id='table_row' name='table_row'>
-                <td>{props.song.title}</td>
-                <td>{props.song.artist}</td>
-                <td>{props.song.album}</td>
-                <td>{props.song.genre}</td>
-                <td>{props.song.release_date}</td>
-                <td>
-                {/* Hand Edit */}
-                <form action='/library'>
-                <Link to={props.link}>
-                <button onClick={() => editTrue()}>Edit</button>
-                </Link>
-                </form>
-                </td>
-                <td><button onClick={props.deleteSong}>Delete</button></td>
-            </tr>
-        </tbody>
-        )
-    }
-
 }
 
 export default Song;

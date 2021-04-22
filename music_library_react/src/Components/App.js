@@ -6,17 +6,14 @@ import SongTable from './SongTable';
 import Song from './Songs';
 import Header from './Header';
 import AddSong from './AddSong';
-import EditSong from './EditSong'
 
 class App extends Component {
   state = {
     songs: [],
-    currentSong: []
   }
 
   componentDidMount(){
     //gets called after the component did mount (rendered to the page)
-    this.refreshTable();
     this.getAllSongs();
   };
 
@@ -47,23 +44,14 @@ class App extends Component {
       <Song 
         key={song.id}
         song={song}
-        link={
-          {
-            pathname:  `/song/${song.id}`,
-            query: {song: song.id},
-          }
-        }
         deleteSong={() => this.deleteSong(song.id)}
       />
     )
   };
 
-  refreshTable() {
-    this.getAllSongs();
-    this.setState({
-      song: []
-    })
-  }
+
+
+
 
   render(){
     console.log("this.state >>>", this.state);
@@ -77,7 +65,8 @@ class App extends Component {
         <Route path='/add_song'>
           <AddSong/>
       </Route>
-      <Route exact path='/song/:id' component={EditSong}/>
+      {/* <Route exact path='/song/:id' component={EditSong}/> */}
+
       </Router>
 
     </div>
