@@ -15,11 +15,6 @@ function Header() {
             </a>
             <div className="navbar-nav mr-auto">
             <li className="nav-item">
-                <Link to={"/add_song"} className="nav-link">
-                Add Song
-                </Link>
-            </li>
-            <li className="nav-item">
                 <Link to={"/library"} className="nav-link">
                 Library
                 </Link>

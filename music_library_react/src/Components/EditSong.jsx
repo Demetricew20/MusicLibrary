@@ -30,7 +30,6 @@ export default class EditSong extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.getSong(this.props.id);
   }
 

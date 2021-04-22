@@ -1,21 +1,8 @@
-import React, {useState} from 'react'
-import Modal from "react-bootstrap/Modal";
+import React from 'react';
+import ModalForm from './Modal.js';
 import AddSong from './AddSong';
 
 const SongTable = (props) => {
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const showModal = () => {
-        setIsOpen(true);
-    }
-    
-    const hideModal = () => {
-        setIsOpen(false);
-    }
-
-
-
 
     return (
         <div>
@@ -32,18 +19,7 @@ const SongTable = (props) => {
                 {props.mapSongs()}
             </table>
             <div>
-                {/* <button onClick={}>Add New Song</button>
-                <Modal>
-                    <Modal.Header>
-                    <Modal.Title>Add Song</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>                       
-                    <AddSong/>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <button onClick={hideModal}>Cancel</button>
-                    </Modal.Footer>
-                </Modal> */}
+            <ModalForm action='Add New Song' title='Add Song' content={<AddSong/>}/>
                 
             </div>
         </div>
