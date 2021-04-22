@@ -72,7 +72,6 @@ class App extends Component {
         <Route path='/add_song'>
           <AddSong/>
       </Route>
-        <Route path="/song/:id" render={props => ( <EditSong {...props} />)} />
       </Router>
 
     </div>
