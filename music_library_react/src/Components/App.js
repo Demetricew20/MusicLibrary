@@ -65,7 +65,6 @@ class App extends Component {
         <Route path='/add_song'>
           <AddSong/>
       </Route>
-      {/* <Route exact path='/song/:id' component={EditSong}/> */}
 
       </Router>
 

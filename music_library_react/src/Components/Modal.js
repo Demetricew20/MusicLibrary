@@ -14,8 +14,6 @@ const ModalForm = (props) => {
         setIsOpen(false);
     }
 
-
-
     return (
             <>
             <button onClick={showModal}>{props.action}</button>
@@ -34,4 +32,4 @@ const ModalForm = (props) => {
     )
 }
 
-export default ModalForm
+export default ModalForm;

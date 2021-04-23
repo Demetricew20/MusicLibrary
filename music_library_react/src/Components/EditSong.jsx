@@ -91,7 +91,6 @@ export default class EditSong extends Component {
   }
 
   getSong(id) {
-    console.log(this.props);
     MusicLibraryServices.get(id)
       .then(response => {
         this.setState({

@@ -4,16 +4,6 @@ import EditSong from './EditSong.jsx';
 
 const Song = (props) => {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const showModal = () => {
-        setIsOpen(true);
-    }
-    
-    const hideModal = () => {
-        setIsOpen(false);
-    }
-
     
         return (
             
