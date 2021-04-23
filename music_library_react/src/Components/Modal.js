@@ -11,6 +11,7 @@ const ModalForm = (props) => {
     
     const hideModal = () => {
         setIsOpen(false);
+        window.location.reload();
     }
 
     return (

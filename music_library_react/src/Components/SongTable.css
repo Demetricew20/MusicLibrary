@@ -8,13 +8,13 @@ body {
 
 .add__song__btn {
     position: relative;
-    top: 6vh;
-    right: 1.5vh;
+    top: 55px;
+    left: 15px;
     
 }
 
 .search__bar {
     position: relative;
-    bottom: 1.5vh;
+    bottom: 3vh;
 }
 
