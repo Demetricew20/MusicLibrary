@@ -29,7 +29,8 @@
 }
 
 .main__content {
-  z-index: 10;
+  position: relative;
+  z-index: 5;
 }
 
 .animation__area {
@@ -39,19 +40,18 @@
 }
 
 .box__area {
-  z-index: -3;
+  z-index: -1;
   margin: 0;
   padding: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .box__area li {
-  z-index: -1;
   position: absolute;
   bottom: -150px;
   display: block;
@@ -69,6 +69,7 @@
   -moz-animation-iteration-count: infinite;
   animation: float 20s linear infinite;
 }
+
 .box__area li:nth-child(1){
   left: 86%;
   width: 80px;

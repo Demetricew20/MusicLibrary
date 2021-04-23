@@ -2,8 +2,8 @@
     color: #8C41A1;
 }
 
-svg:hover {
-    color: white;
+.header {
+    z-index: 5;
 }
 
 .navbar-dark .navbar-brand {

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './SongTable.css'
-import ModalForm from './Modal.js';
+import ModalForm from '../Modal/Modal.js';
 import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, {Search} from 'react-bootstrap-table2-toolkit';
-import MusicLibraryServices from '../Services/requests.js';
-import EditSong from './EditSong.jsx';
-import DeleteSong from './DeleteSong.js';
-import AddSong from './AddSong.jsx';
+import MusicLibraryServices from '../../Services/requests.js';
+import EditSong from '../EditSong/EditSong.jsx';
+import DeleteSong from '../DeleteSong.js';
+import AddSong from '../AddSong/AddSong.jsx';
 
 export class SongTable extends Component {
 
@@ -42,9 +42,6 @@ export class SongTable extends Component {
             text: 'Delete',
             formatter: this.columnDeleteButton,
         }
-
-    
-    
         ]
     };
 
@@ -101,7 +98,7 @@ export class SongTable extends Component {
 
         
             return (
-            <div className='container-fluid'>
+            <div className='container-fluid main__container'>
                 <div className='add__song__btn row justify-content-start'>
                     <ModalForm buttonStyle='btn btn-success' action='Add New Song' title='Add Song' content={<AddSong/>}  />
                 </div>
@@ -116,8 +113,8 @@ export class SongTable extends Component {
                     >
                         {
                             props => (
-                                <div className="music__table" >
-                                    <SearchBar className='search__bar' placeholder='Search for' {...props.searchProps} />
+                                <div >
+                                    <SearchBar className='search__bar' placeholder='Search...' {...props.searchProps} />
                                     <hr/>
                                     <BootstrapTable
                                     bootstrap4
@@ -125,7 +122,9 @@ export class SongTable extends Component {
                                     bordered
                                     condensed
                                     hover
-                                    classes = 'table-dark table-md table-responsive-sm'
+                                    classes = 'table-dark table-sm table-responsive-sm'
+                                    headerClasses = 'header__row'
+                                    bodyClasses = 'table__body'
                                     keyField='title'
                                     data = {this.state.songs}
                                     columns={this.state.columns}

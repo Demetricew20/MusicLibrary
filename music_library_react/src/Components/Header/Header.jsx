@@ -8,7 +8,7 @@ import './Header.css';
 function Header() {
 
     return (
-        <div>
+        <div className='header'>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <a href="/" className="navbar-brand">
             <MusicNoteBeamed  size={50} />

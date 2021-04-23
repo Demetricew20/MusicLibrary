@@ -2,10 +2,9 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, {Component} from 'react';
 import MusicLibraryServices from '../Services/requests'
-import SongTable from './SongTable';
-import Song from './Songs';
-import Header from './Header';
-import AddSong from './AddSong';
+import SongTable from './SongTable/SongTable';
+import Header from './Header/Header';
+import AddSong from './AddSong/AddSong';
 
 class App extends Component {
   state = {
@@ -37,19 +36,6 @@ class App extends Component {
 
     this.getAllSongs();
   }
-  
-  
-  mapSongs(){
-    return this.state.songs.map(song =>
-      <Song 
-        key={song.id}
-        song={song}
-        deleteSong={() => this.deleteSong(song.id)}
-      />
-    )
-  };
-
-
 
 
 
