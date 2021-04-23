@@ -4,6 +4,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import MusicLibraryServices from '../Services/requests.js';
 import EditSong from './EditSong.jsx';
 import DeleteSong from './DeleteSong.js';
+import AddSong from './AddSong.jsx';
 
 export class SongTable extends Component {
 
@@ -106,6 +107,10 @@ export class SongTable extends Component {
 
 
 
+                </div>
+
+                <div>
+                    <ModalForm action='Add New Song' title='Add Song' content={<AddSong/>}  />
                 </div>
 
 
