@@ -56,7 +56,9 @@ class App extends Component {
   render(){
     console.log("this.state >>>", this.state);
     return(
-    <div>
+    <div className='main__content' >
+
+
       <Router>
         <Header/>
         <Route path='/library'>
@@ -67,6 +69,22 @@ class App extends Component {
       </Route>
 
       </Router>
+      <div className='animation__area'>
+        <ul className='box__area'>
+          
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+        </ul>
+
+
+      </div>
 
     </div>
     );

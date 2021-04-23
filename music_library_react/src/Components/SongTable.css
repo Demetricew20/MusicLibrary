@@ -1,0 +1,20 @@
+
+body {
+
+    background-color: green;
+
+}
+
+
+.add__song__btn {
+    position: relative;
+    top: 6vh;
+    right: 1.5vh;
+    
+}
+
+.search__bar {
+    position: relative;
+    bottom: 1.5vh;
+}
+

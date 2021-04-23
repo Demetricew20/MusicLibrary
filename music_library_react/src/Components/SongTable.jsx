@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SongTable.css'
 import ModalForm from './Modal.js';
 import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, {Search} from 'react-bootstrap-table2-toolkit';
@@ -100,48 +101,44 @@ export class SongTable extends Component {
 
         
             return (
-            <div>
-            <ToolkitProvider
-            keyField='title'
-            data={this.state.songs}
-            columns={this.state.columns}
-            search
-            >
-                {
-                    props => (
-                        <div>
-                            <SearchBar {...props.searchProps} />
-                            <hr/>
-                            <BootstrapTable
-                            // striped
-                            // hover
-                            // keyField='title'
-                            // data = {this.state.songs}
-                            // columns={this.state.columns}
-                            {...props.baseProps}
-                            >
-                            </BootstrapTable>
-
-                        </div>
-                    )
-                }
-
-            </ToolkitProvider>
-                {/* <div>
-                <BootstrapTable
-                striped
-                hover
-                keyField='title'
-                data = {this.state.songs}
-                columns={this.state.columns}>
-                </BootstrapTable>
-                </div> */}
-
-                <div>
+            <div className='container-fluid'>
+                <div className='add__song__btn row justify-content-end'>
                     <ModalForm action='Add New Song' title='Add Song' content={<AddSong/>}  />
                 </div>
 
 
+                <div> 
+                    <ToolkitProvider
+                    keyField='title'
+                    data={this.state.songs}
+                    columns={this.state.columns}
+                    search
+                    >
+                        {
+                            props => (
+                                <div className="music__table" >
+                                    <SearchBar className='search__bar' placeholder='Search for' {...props.searchProps} />
+                                    <hr/>
+                                    <BootstrapTable
+                                    bootstrap4
+                                    striped
+                                    bordered
+                                    condensed
+                                    hover
+                                    classes = 'table-dark table-md table-responsive-sm'
+                                    keyField='title'
+                                    data = {this.state.songs}
+                                    columns={this.state.columns}
+                                    {...props.baseProps}
+                                    >
+                                    </BootstrapTable>
+
+                                </div>
+                            )
+                        }
+
+                    </ToolkitProvider>
+            </div>
 
 
 
