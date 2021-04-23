@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import './Header.css'
@@ -23,11 +23,6 @@ function Header() {
         </nav>
 
         <div className="container mt-3">
-            <Switch>
-            {/* <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-            <Route exact path="/add" component={AddTutorial} />
-            <Route path="/tutorials/:id" component={Tutorial} /> */}
-            </Switch>
         </div>
         </div>
     )

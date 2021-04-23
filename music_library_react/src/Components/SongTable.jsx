@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import ModalForm from './Modal.js';
 import BootstrapTable from 'react-bootstrap-table-next';
+import ToolkitProvider, {Search} from 'react-bootstrap-table2-toolkit';
 import MusicLibraryServices from '../Services/requests.js';
 import EditSong from './EditSong.jsx';
 import DeleteSong from './DeleteSong.js';
 import AddSong from './AddSong.jsx';
 
 export class SongTable extends Component {
+
 
     state = {
         songs: [],
@@ -45,6 +47,8 @@ export class SongTable extends Component {
         ]
     };
 
+    
+
 
 
     columnEditButton(cell, row, rowIndex, formatExtraData){
@@ -65,11 +69,11 @@ export class SongTable extends Component {
     async deleteSong(id){
         await MusicLibraryServices.delete(id)
         .then(response => {
-          console.log(response.data);
-          this.props.history.push('/')
+            console.log(response.data);
+            this.props.history.push('/')
         })
         .catch(error => {
-          console.log(error.response);
+            console.log(error.response);
         })
     }
     
@@ -83,31 +87,55 @@ export class SongTable extends Component {
     async getAllSongs(){
         const response = await MusicLibraryServices.getAll();
         this.setState({
-          songs: response.data
+            songs: response.data
         })
-      };
+        };
 
 
 
-    render(){   
+    render(){  
+
+            const {SearchBar} = Search;
+
+
+        
             return (
             <div>
-                <div>
-                {}
+            <ToolkitProvider
+            keyField='title'
+            data={this.state.songs}
+            columns={this.state.columns}
+            search
+            >
+                {
+                    props => (
+                        <div>
+                            <SearchBar {...props.searchProps} />
+                            <hr/>
+                            <BootstrapTable
+                            // striped
+                            // hover
+                            // keyField='title'
+                            // data = {this.state.songs}
+                            // columns={this.state.columns}
+                            {...props.baseProps}
+                            >
+                            </BootstrapTable>
+
+                        </div>
+                    )
+                }
+
+            </ToolkitProvider>
+                {/* <div>
                 <BootstrapTable
                 striped
                 hover
                 keyField='title'
                 data = {this.state.songs}
                 columns={this.state.columns}>
-                
-
                 </BootstrapTable>
-                
-
-
-
-                </div>
+                </div> */}
 
                 <div>
                     <ModalForm action='Add New Song' title='Add Song' content={<AddSong/>}  />
@@ -122,26 +150,3 @@ export class SongTable extends Component {
 }
 
 export default SongTable;
-
-
-
-
-
-
-
-            {/* <table className="table table-dark table-sm table-striped">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Genre</th>
-                        <th>Release Date</th>
-                    </tr>
-                </thead>
-                {props.mapSongs()}
-            </table>
-            <div>
-            <ModalForm action='Add New Song' title='Add Song' content={<AddSong/>}/>
-                
-            </div> */}
