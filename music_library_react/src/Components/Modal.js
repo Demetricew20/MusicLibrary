@@ -15,7 +15,7 @@ const ModalForm = (props) => {
 
     return (
             <>
-            <button onClick={showModal}>{props.action}</button>
+            <button onClick={showModal} type='button' className={props.buttonStyle}>{props.action}</button>
             <Modal show={isOpen} onHide={hideModal}>
                 <Modal.Header>
                 <Modal.Title>{props.title}</Modal.Title>

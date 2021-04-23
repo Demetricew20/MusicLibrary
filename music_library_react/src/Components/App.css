@@ -53,7 +53,7 @@
 .box__area li {
   z-index: -1;
   position: absolute;
-  bottom: -12.5vh;
+  bottom: -150px;
   display: block;
   list-style: none;
   width: 25px;
@@ -63,12 +63,18 @@
   -webkit-animation-duration: 20s;
   -webkit-animation-timing-function: liner;
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: float;
+  -moz-animation-duration: 20s;
+  -moz-animation-timing-function: liner;
+  -moz-animation-iteration-count: infinite;
+  animation: float 20s linear infinite;
 }
 .box__area li:nth-child(1){
   left: 86%;
   width: 80px;
   height: 130px;
   animation-delay: 0s;
+  animation-duration: 40s;
 }
 .box__area li:nth-child(2){
   left: 12%;
@@ -94,7 +100,7 @@
   left: 65%;
   width: 75px;
   height: 75px;
-  animation-delay: 1.5s;
+  animation-delay: 5s;
   animation-duration: 40s;
 }
 .box__area li:nth-child(6){
@@ -108,7 +114,7 @@
   left: 6%;
   width: 90px;
   height: 90px;
-  animation-delay: 3.75s;
+  animation-delay: 7s;
   animation-duration: 30s;
 
 }

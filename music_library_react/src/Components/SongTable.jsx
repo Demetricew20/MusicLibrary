@@ -54,7 +54,7 @@ export class SongTable extends Component {
 
     columnEditButton(cell, row, rowIndex, formatExtraData){
         return (
-        <ModalForm action='Edit' title='Edit Song'
+        <ModalForm buttonStyle='btn btn-secondary' action='Edit' title='Edit Song'
         content={<EditSong id={row.id}/>}/>
         )
     }
@@ -103,7 +103,7 @@ export class SongTable extends Component {
             return (
             <div className='container-fluid'>
                 <div className='add__song__btn row justify-content-end'>
-                    <ModalForm action='Add New Song' title='Add Song' content={<AddSong/>}  />
+                    <ModalForm buttonStyle='btn btn-success' action='Add New Song' title='Add Song' content={<AddSong/>}  />
                 </div>
 
 

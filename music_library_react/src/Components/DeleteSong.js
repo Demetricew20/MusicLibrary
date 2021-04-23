@@ -18,7 +18,7 @@ export default class DeleteSong extends Component {
 
     render(){
         return (
-            <button onClick={() => this.deleteSong(this.props.id)}>Delete</button>
+            <button className='btn btn-danger' onClick={() => this.deleteSong(this.props.id)}>Delete</button>
         )
     }
 }
