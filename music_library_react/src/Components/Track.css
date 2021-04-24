@@ -1,0 +1,26 @@
+.cover {
+    background-color: rgb(52,58,64);
+    text-align: center;
+    border: solid black;
+    border-width: 1 1px;
+    height: 88%;
+    width: 95%;
+    color: white;
+}
+
+.song {
+    text-align: center;
+    height: 650px;
+    width: 100%;
+
+}
+
+.title {
+    padding-top: 10%;
+    padding-bottom: 15%;
+}
+
+.audio__player {
+    position: relative;
+    top: 50px;
+}

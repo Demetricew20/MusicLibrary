@@ -1,0 +1,30 @@
+.btn__previous {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    background-color: #343A40;
+    color: white;
+}
+
+.btn__next:hover, .btn__previous:hover {
+    font-weight: bolder;
+}
+
+.btn__next {
+    background-color: #343A40;
+    color: white;
+}
+
+
+@media only screen and (max-width: 766px) {
+    .btn__previous {
+        position: relative;
+        right: 0;
+        bottom: 2px;
+    }
+
+    .btn__next {
+        position: relative;
+        bottom: 75px;
+    }
+}
