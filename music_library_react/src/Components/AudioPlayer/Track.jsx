@@ -16,6 +16,8 @@ function Track(props) {
     let source;
     let coverImage;
 
+    // Audio and Image file designation
+
     switch (props.song.title) {
         
         case 'The Light':
@@ -64,7 +66,7 @@ function Track(props) {
         <div className='song'>
             <div className='cover'>
                 <h1 className='title'>{props.song.title}</h1>
-                <img src={coverImage} width={300} height={300}></img>
+                <img src={coverImage} alt="Album Cover Art" width={300} height={300}></img>
                 <h4 className='artist'>Artist - {props.song.artist}</h4>
                 <h4 className='album'>Album - {props.song.album}</h4>
                 <h4 className='releaseDate'>{props.song.releaseDate}</h4>

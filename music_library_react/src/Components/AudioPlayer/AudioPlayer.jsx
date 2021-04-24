@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Track from './Track';
 import './AudioPlayer.css';
 
@@ -12,7 +12,7 @@ function AudioPlayer(props)  {
         </div>
         <div className='col-md-6'>
             {/* Display Song with Cover here  */}
-            <Track song={props.song}/>
+            <Track song={props.song} />
         </div>
         <div className='col-md-3'>
             {/* Button here to move to the next Song */}

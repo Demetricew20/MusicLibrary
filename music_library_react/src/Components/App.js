@@ -49,13 +49,9 @@ class App extends Component {
       });
   }
 
-  mapSongs(){
-    
-  }
-
   render(){
     console.log('state >>>', this.state.songs)
-    if (this.state.songs.length == 0) {
+    if (this.state.songs.length === 0) {
       return <div>Loading....</div>
     }
     else {

@@ -11,7 +11,6 @@ export default class EditSong extends Component {
     this.onChangeGenre = this.onChangeGenre.bind(this);
     this.onChangeReleaseDate = this.onChangeReleaseDate.bind(this);
     this.getSong = this.getSong.bind(this);
-    this.updated = this.updated.bind(this);
     this.updateSong = this.updateSong.bind(this);
     this.deleteSong = this.deleteSong.bind(this);
 
@@ -103,32 +102,6 @@ export default class EditSong extends Component {
       });
   }
 
-  updated(status) {
-    var data = {
-      id: this.state.currentSong.id,
-      title: this.state.currentSong.title,
-      artist: this.state.currentSong.artist,
-      album: this.state.currentSong.album,
-      genre: this.state.currentSong.genre,
-      releaseDate: this.state.currentSong.releaseDate,
-      updated: status
-    };
-
-    MusicLibraryServices.update(this.state.currentSong.id, data)
-      .then(response => {
-        this.setState(prevState => ({
-          currentSong: {
-            ...prevState.currentSong,
-            updated: status
-          }
-        }));
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
   updateSong() {
     MusicLibraryServices.update(
       this.state.currentSong.id,
@@ -140,7 +113,7 @@ export default class EditSong extends Component {
           message: "The song was updated successfully!"
         });
         
-        this.refreshLibrary();
+        window.location.reload();
         
       })
       .catch(error => {
@@ -148,15 +121,11 @@ export default class EditSong extends Component {
       });
   }
 
-  refreshLibrary = () => {
-    window.location.reload();
-  }
-
   deleteSong() {    
     MusicLibraryServices.delete(this.state.currentSong.id)
       .then(response => {
         console.log(response.data);
-        this.refreshLibrary();
+        window.location.reload();
       })
       .catch(error => {
         console.log(error);
