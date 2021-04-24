@@ -9,6 +9,7 @@ import itWasAGoodDay from './Audio/itWasAGoodDay.m4a';
 import homeSweetHome from './Audio/homeSweetHome.m4a';
 import walkingOnADream from './Audio/walkingOnADream.m4a';
 import './Track.css';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 function Track(props) {
@@ -71,7 +72,7 @@ function Track(props) {
                 <h4 className='album'>Album - {props.song.album}</h4>
                 <h4 className='releaseDate'>{props.song.releaseDate}</h4>
                 <span className='audio__player'>
-                    <audio controls src={source} />
+                    <ReactAudioPlayer src={source} controls className='audio__controls' />
                     </span>
             </div>
         </div>

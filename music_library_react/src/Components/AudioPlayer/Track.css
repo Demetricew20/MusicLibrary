@@ -1,11 +1,10 @@
 .cover {
     background-color: rgb(52,58,64);
     text-align: center;
-    border: solid black;
-    border-width: 1 1px;
     height: 88%;
     width: 95%;
     color: white;
+    
 }
 
 .song {
@@ -31,4 +30,8 @@ img:hover {
 .audio__player {
     position: relative;
     top: 30px;
+}
+
+.audio__controls {
+    
 }
