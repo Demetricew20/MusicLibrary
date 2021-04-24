@@ -98,7 +98,7 @@ export class SongTable extends Component {
 
         
             return (
-            <div className='container-fluid main__container'>
+            <div className='container-fluid main__container' id='library'>
                 <div className='add__song__btn row justify-content-start'>
                     <ModalForm buttonStyle='btn btn-success' action='Add New Song' title='Add Song' content={<AddSong/>}  />
                 </div>

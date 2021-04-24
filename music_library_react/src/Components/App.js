@@ -61,10 +61,10 @@ class App extends Component {
     
           <Router>
             <Header/>
-            <Route path='/library'>
+            <Route exact path='/library'>
             <SongTable/>
             </Route>
-            <Route path='/home'>
+            <Route exact path='/'>
               <AudioPlayer song={this.state.songs[this.state.songNumber]} nextSong={() => this.goToNextSong()} previousSong={()=>this.goToPreviousSong()}/>
           </Route>
     
