@@ -16,11 +16,19 @@
 }
 
 .title {
-    padding-top: 10%;
-    padding-bottom: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+img {
+    margin-bottom: 10px;
+}
+
+img:hover {
+    transform: scale(1.5);
 }
 
 .audio__player {
     position: relative;
-    top: 50px;
+    top: 30px;
 }
