@@ -5,7 +5,6 @@ import MusicLibraryServices from '../Services/requests'
 export default class DeleteSong extends Component {
 
     deleteSong = async(id) => {  
-        debugger;  
         try {
             await MusicLibraryServices.delete(id);
             window.location.reload();

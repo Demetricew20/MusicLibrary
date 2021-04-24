@@ -45,7 +45,16 @@ export class SongTable extends Component {
         ]
     };
 
-    
+    componentDidMount(){
+        this.getAllSongs()
+    }
+
+    async getAllSongs(){
+        const response = await MusicLibraryServices.getAll();
+        this.setState({
+            songs: response.data
+        })
+        };
 
 
 
@@ -63,33 +72,6 @@ export class SongTable extends Component {
             
         )
     }
-
-    async deleteSong(id){
-        await MusicLibraryServices.delete(id)
-        .then(response => {
-            console.log(response.data);
-            this.props.history.push('/')
-        })
-        .catch(error => {
-            console.log(error.response);
-        })
-    }
-    
-
-
-
-    componentDidMount(){
-        this.getAllSongs()
-    }
-
-    async getAllSongs(){
-        const response = await MusicLibraryServices.getAll();
-        this.setState({
-            songs: response.data
-        })
-        };
-
-
 
     render(){  
 

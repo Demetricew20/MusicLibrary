@@ -1,9 +1,10 @@
 .cover {
     background-color: rgb(52,58,64);
     text-align: center;
-    height: 88%;
+    height: 89%;
     width: 95%;
     color: white;
+
     
 }
 
@@ -17,6 +18,7 @@
 .title {
     padding-top: 2%;
     padding-bottom: 2%;
+    font-size: 30px;
 }
 
 img {
@@ -30,8 +32,4 @@ img:hover {
 .audio__player {
     position: relative;
     top: 30px;
-}
-
-.audio__controls {
-    
 }
