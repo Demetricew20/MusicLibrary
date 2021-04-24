@@ -10,7 +10,7 @@ function Header() {
     return (
         <div className='header'>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-            <a href="/" className="navbar-brand">
+            <a href="/home" className="navbar-brand">
             <MusicNoteBeamed  size={50} />
             </a>
             <div className="navbar-nav mr-auto">

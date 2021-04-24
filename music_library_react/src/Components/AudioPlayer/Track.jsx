@@ -1,13 +1,13 @@
 import React from 'react';
-import theLight from '../Assets/Audio/The_Light.m4a';
-import regulate from '../Assets/Audio/Regulate.m4a';
-import myBabe from '../Assets/Audio/My_Babe.m4a';
-import sittinOnTheDock from '../Assets/Audio/Sittin_on_the_Dock.m4a';
-import elevators from '../Assets/Audio/elevators.m4a';
-import yourAllINeed from '../Assets/Audio/yourAllINeed.m4a';
-import itWasAGoodDay from '../Assets/Audio/itWasAGoodDay.m4a';
-import homeSweetHome from '../Assets/Audio/homeSweetHome.m4a';
-import walkingOnADream from '../Assets/Audio/walkingOnADream.m4a';
+import theLight from './Audio/theLight.m4a';
+import regulate from './Audio/regulate.m4a';
+import myBabe from './Audio/myBabe.m4a';
+import sittinOnTheDock from './Audio/sittinOnTheDock.m4a';
+import elevators from './Audio/elevators.m4a';
+import yourAllINeed from './Audio/yourAllINeed.m4a';
+import itWasAGoodDay from './Audio/itWasAGoodDay.m4a';
+import homeSweetHome from './Audio/homeSweetHome.m4a';
+import walkingOnADream from './Audio/walkingOnADream.m4a';
 import './Track.css';
 
 

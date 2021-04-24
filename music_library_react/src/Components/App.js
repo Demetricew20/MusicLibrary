@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import MusicLibraryServices from '../Services/requests';
 import SongTable from './SongTable/SongTable';
 import Header from './Header/Header';
-import AudioPlayer from './AudioPlayer';
+import AudioPlayer from './AudioPlayer/AudioPlayer';
 
 class App extends Component {
 
@@ -68,7 +68,7 @@ class App extends Component {
             <Route path='/library'>
             <SongTable/>
             </Route>
-            <Route path='/'>
+            <Route path='/home'>
               <AudioPlayer song={this.state.songs[this.state.songNumber]} nextSong={() => this.goToNextSong()} previousSong={()=>this.goToPreviousSong()}/>
           </Route>
     
