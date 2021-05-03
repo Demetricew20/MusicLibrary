@@ -9,6 +9,7 @@
   
  ## Technologies used
  ### - React.js
+ ### - Python
  ### - Django REST API
  ### - MySQL
  
